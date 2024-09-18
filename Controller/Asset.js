@@ -29,7 +29,7 @@ exports.AssetCreate = async function (req, res, next) {
 exports.FindData = async function (req, res, next) {
     try {
 
-        let assetsFind = await Asset.find()
+        let assetsFind = await Asset.find().populate("owner")
 
 
         res.status(200).json({
